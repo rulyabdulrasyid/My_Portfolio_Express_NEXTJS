@@ -27,10 +27,10 @@ module.exports = {
       instituteurl: {
         type: Sequelize.STRING,
       },
-      startdat: {
+      startdate: {
         type: Sequelize.INTEGER,
       },
-      endedat: {
+      enddate: {
         type: Sequelize.INTEGER,
       },
       createdAt: {
