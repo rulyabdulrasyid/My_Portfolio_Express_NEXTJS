@@ -4,23 +4,17 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
-      "Media_socials",
+      "Project_teches",
       [
         {
-          user_id: 1,
-          username: "instagram/adminportofolio",
+          project_id: 1,
+          tech_id: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          user_id: 1,
-          username: "twitter/adminportofolio",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          user_id: 1,
-          username: "youtube/adminportofolio",
+          project_id: 2,
+          tech_id: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -30,7 +24,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Media_socials", null, {
+    await queryInterface.bulkDelete("Project_teches", null, {
       restartIdentity: true,
       truncate: true,
       cascade: true,
