@@ -19,9 +19,21 @@ module.exports = (sequelize, DataTypes) => {
   }
   Certificate_category.init(
     {
-      certificate_id: DataTypes.INTEGER,
-      category_id: DataTypes.INTEGER,
-      name: DataTypes.STRING,
+      certificate_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      category_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,

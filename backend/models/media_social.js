@@ -14,8 +14,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   Media_social.init(
     {
-      user_id: DataTypes.STRING,
-      username: DataTypes.STRING,
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,

@@ -22,11 +22,31 @@ module.exports = (sequelize, DataTypes) => {
   }
   Project.init(
     {
-      user_id: DataTypes.INTEGER,
-      name: DataTypes.STRING,
-      year: DataTypes.INTEGER,
-      description: DataTypes.STRING,
-      status: DataTypes.STRING,
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      year: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      status: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,

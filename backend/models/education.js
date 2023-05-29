@@ -14,12 +14,36 @@ module.exports = (sequelize, DataTypes) => {
   }
   Education.init(
     {
-      user_id: DataTypes.INTEGER,
-      degreename: DataTypes.STRING,
-      institutename: DataTypes.STRING,
-      instituteurl: DataTypes.STRING,
-      startdat: DataTypes.INTEGER,
-      endedat: DataTypes.INTEGER,
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      degreename: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      institutename: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      instituteurl: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      startdate: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      endedate: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,

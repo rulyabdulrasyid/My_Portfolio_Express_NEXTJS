@@ -17,9 +17,21 @@ module.exports = (sequelize, DataTypes) => {
   }
   Project_category.init(
     {
-      project_id: DataTypes.INTEGER,
-      category_id: DataTypes.INTEGER,
-      name: DataTypes.STRING,
+      project_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      category_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,
