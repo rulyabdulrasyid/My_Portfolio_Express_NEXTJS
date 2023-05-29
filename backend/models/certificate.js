@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Certificate.belongsTo(models.User, { foreignKey: "user_id" });
-      Certificate.belongsToMany(model.Category, {
+      Certificate.belongsToMany(models.Category, {
         through: models.Certificate_category,
         foreignKey: "certificate_id",
       });
@@ -18,12 +18,36 @@ module.exports = (sequelize, DataTypes) => {
   }
   Certificate.init(
     {
-      user_id: DataTypes.INTEGER,
-      name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      ispublishedby: DataTypes.STRING,
-      startdate: DataTypes.INTEGER,
-      enddate: DataTypes.INTEGER,
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      ispublishedby: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      startdate: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      enddate: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,

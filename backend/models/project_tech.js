@@ -15,8 +15,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   Project_tech.init(
     {
-      project_id: DataTypes.INTEGER,
-      tech_id: DataTypes.INTEGER,
+      project_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      tech_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,

@@ -2,36 +2,30 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Educations", {
+    await queryInterface.createTable("Project_teches", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      user_id: {
+      project_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Users",
+          model: "Projects",
+          key: "id",
+          onUpdate: "CASCADE",
+          onDelete: "CASCADE",
+        },
+      },
+      tech_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Teches",
           key: "id",
         },
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
-      },
-      degreename: {
-        type: Sequelize.STRING,
-      },
-      institutename: {
-        type: Sequelize.STRING,
-      },
-      instituteurl: {
-        type: Sequelize.STRING,
-      },
-      startdat: {
-        type: Sequelize.INTEGER,
-      },
-      endedat: {
-        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -44,6 +38,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Education");
+    await queryInterface.dropTable("Project_teches");
   },
 };

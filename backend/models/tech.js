@@ -17,9 +17,21 @@ module.exports = (sequelize, DataTypes) => {
   }
   Tech.init(
     {
-      name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      techurl: DataTypes.STRING,
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
+      techurl: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { notEmpty: true },
+      },
     },
     {
       sequelize,

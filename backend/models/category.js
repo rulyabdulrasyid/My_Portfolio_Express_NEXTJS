@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       Category.belongsToMany(models.Certificate, {
         through: models.Certificate_category,
-        foreignKey: "certificate_id",
+        foreignKey: "category_id",
       });
     }
   }
