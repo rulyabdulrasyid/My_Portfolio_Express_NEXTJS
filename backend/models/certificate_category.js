@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "certificate_id",
       });
       Certificate_category.belongsTo(models.Category, {
-        foreignKey: "cetegory_id",
+        foreignKey: "category_id",
       });
     }
   }
@@ -26,11 +26,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       category_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: { notEmpty: true },
-      },
-      name: {
-        type: DataTypes.STRING,
         allowNull: false,
         validate: { notEmpty: true },
       },

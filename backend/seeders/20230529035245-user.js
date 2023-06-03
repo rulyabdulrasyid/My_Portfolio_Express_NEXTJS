@@ -9,10 +9,9 @@ module.exports = {
         {
           firstname: "admin",
           lastname: "portofolio",
-          description:
-            "hello, i'm full stack enginer based in Bandung, Indonesia",
+          username: "rulyabdulrasyid",
           email: "admin@gmail.com",
-          hashpassword: await bcrypt.hash("admin", 10),
+          password: await bcrypt.hash("admin", 10),
           aboutme:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar venenatis pharetra. Ut id neque orci. Suspendisse potenti. Cras interdum dui at semper sodales. Suspendisse aliquet, sapien at ornare suscipit.",
           createdAt: new Date(),

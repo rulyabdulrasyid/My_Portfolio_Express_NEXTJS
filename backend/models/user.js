@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: { notEmpty: true },
       },
-      description: {
+      username: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: { notEmpty: true },
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: { notEmpty: true },
       },
-      hashpassword: {
+      password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: { notEmpty: true },

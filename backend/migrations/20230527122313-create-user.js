@@ -15,14 +15,14 @@ module.exports = {
       lastname: {
         type: Sequelize.STRING,
       },
-      description: {
+      username: {
         type: Sequelize.STRING,
       },
       email: {
         type: Sequelize.STRING,
         unique: true,
       },
-      hashpassword: {
+      password: {
         type: Sequelize.STRING,
       },
       aboutme: {

@@ -9,7 +9,12 @@ module.exports = {
         {
           project_id: 1,
           category_id: 2,
-          name: "Electrical",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          project_id: 2,
+          category_id: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
