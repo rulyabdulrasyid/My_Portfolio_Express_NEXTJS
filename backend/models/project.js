@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Project.belongsTo(models.User, { foreignKey: "user_id" });
       Project.belongsToMany(models.Category, {
-        through: models.Project_Category,
+        through: models.Project_category,
         foreignKey: "project_id",
       });
       Project.belongsToMany(models.Tech, {

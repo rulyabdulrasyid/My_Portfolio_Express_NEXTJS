@@ -7,14 +7,12 @@ module.exports = {
       {
         certificate_id: 1,
         category_id: 2,
-        name: "Electrical",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         certificate_id: 2,
         category_id: 2,
-        name: "Electrical",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
