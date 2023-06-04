@@ -98,7 +98,7 @@ class ProjectController {
 
       const project = await Project.findOne({ where: { id } });
       if (!project) {
-        throw { name: "ErrorNotFound" };
+        throw { name: "ErrorNotFound", message: "Project Not Found" };
       }
       await Project.destroy({ where: { id } });
       res.status(200).json({ message: `Project ${project.name} was deleted` });
